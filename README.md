@@ -3,10 +3,6 @@
 
 The following instructions were modified from their original form with a generic Sherlock user in mind who does not have access to a PI group partition or the owners partition.
 
-## Table of Contents
-
-
-
 ## Manual Installation Steps
 ### Step 0: Before Installing
 Before starting the install, you need to obtain a CryoSPARC license. Fill out the download form on CryoSPARC's [website](https://cryosparc.com/download), and select the option that best describes your use case. For most Sherlock users the "I am an academic user carrying out non-profit academic reasearch at a university or educational/research." option will suffice. CryoSPARC will send you an email containing the license number within 24 hours.
@@ -22,17 +18,17 @@ export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
 export PORT_NUM=39000
 ```
-Next, set a license environment variable by replacing <LicenseID> with the number emailed to you. 
+Next, set a license environment variable by replacing \<LicenseID\> with the number emailed to you. 
 ```
 export LICENSE_ID=<LicenseID>
 ```
-Create the install and database directories
+Create the install and database directories,
 ```
 mkdir -p $CS_PATH
 mkdir -p $CS_PATH/cryosparc_db
 cd $CS_PATH
 ```
-Download the compressed files (.tar.gz) for the CryoSPARK master and worker programs
+Download the compressed files (.tar.gz) for the CryoSPARC master and worker programs
 ```
 curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
 curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
@@ -48,13 +44,15 @@ Install CryoSPARC Master
 cd $CS_PATH/cryosparc_master
 ./install.sh --license $LICENSE_ID --dbpath $CS_PATH/cryosparc_db --port $PORT_NUM
 ```
-The previous step creates file config.sh. In order to genearlize CryoSPARC for use on the normal partition, open config.sh in your prefered text editor (i.e. vim, nano, etc.), and comment out the line `export CRYOSPARC_MASTER_HOSTNAME="shXX-XXnXX.int"` by adding a `#` at begining of the line. 
-
+The previous step creates file config.sh. In order to genearlize CryoSPARC for use on the normal partition, open config.sh in your prefered text editor (i.e. vim, nano), and modify the third line `export CRYOSPARC_MASTER_HOSTNAME="sh##-##n##.int"` by replacing `"sh##-##n##.int"` with `$(hostname)`. The modified line should look like this:
+```
+export CRYOSPARC_MASTER_HOSTNAME=$(hostname)
+``` 
 Start the CryoSPARC master instance
 ```
 ./bin/cryosparcm start
 ```
-Create your CryoSPARC login credentials. Replace each of the five fields in between with your own details---keep the quotation marks when entering with your information but remove the brackets, for example `--email "jane@stanford.edu"`
+Create your CryoSPARC login credentials. Replace each of the five fields with your own details---keep the quotation marks when entering with your information but remove the brackets, for example `--email "jane@stanford.edu"`.
 ```
 ./bin/cryosparcm createuser --email "<e-mail>" --password "<password>" --username "<username>" --firstname "<firstname>" --lastname "<lastname>"
 ```
@@ -161,13 +159,12 @@ echo "\$(date): job \$SLURM_JOBID starting on \$SLURM_NODELIST"
 
 EOF
 ```
-
-### Step 4: Finalizing the master instance connection, and Clean Up 
-Last step, connect CryoSPARC to the cluster
+Last step, connect the master with cluster information and submission script.
 ```
 cd $CS_PATH/cryosparc_master
 ./bin/cryosparcm cluster connect
 ```
+### Step 4: Clean Up 
 At this point and both the master and worker instances are configured. 
 To clean up, stop the cryosparc master instance started earlier in the setup and exit sh_dev mode.
 ```
