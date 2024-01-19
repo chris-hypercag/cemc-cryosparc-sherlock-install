@@ -22,7 +22,7 @@ Next, set a license environment variable by replacing \<LicenseID\> with the num
 ```
 export LICENSE_ID=<LicenseID>
 ```
-Create the install and database directories,
+Create the install and database directories using the $CS_PATH variable defined above,
 ```
 mkdir -p $CS_PATH
 mkdir -p $CS_PATH/cryosparc_db
