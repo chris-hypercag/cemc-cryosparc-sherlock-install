@@ -86,6 +86,7 @@ cat <<EOF >  cluster_info.json
     "qinfo_cmd_tpl" : "sinfo",
 }
 EOF
+
 ```
 Copy and paste the following code block to create `cluster_script.sh`. This script provides a template to CryoSPARC for submitting worker jobs.
 ```
@@ -163,6 +164,7 @@ echo "Loaded cryosparc GUI"
 echo "\$(date): job \$SLURM_JOBID starting on \$SLURM_NODELIST"
 
 EOF
+
 ```
 Last step, connect the master with cluster information and submission script.
 ```
