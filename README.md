@@ -18,7 +18,7 @@ export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
 export PORT_NUM=39000
 ```
-Next, set a license environment variable by replacing \<LicenseID\> with the number emailed to you. 
+Next, set a license environment variable by replacing \<LicenseID\> with the number emailed to you in Step 0. 
 ```
 export LICENSE_ID=<LicenseID>
 ```
