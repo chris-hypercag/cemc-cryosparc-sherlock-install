@@ -8,11 +8,11 @@ The following instructions were modified from their original form with a generic
 Before starting the install, you need to obtain a CryoSPARC license. Fill out the download form on CryoSPARC's [website](https://cryosparc.com/download), and select the option that best describes your use case. For most Sherlock users the "I am an academic user carrying out non-profit academic reasearch at a university or educational/research." option will suffice. CryoSPARC will send you an email containing the license number within 24 hours.
 
 ### Step 1: Download CryoSPARC
-Start an interactive job session
+Log on to Sherlock from a terminal window. Once logged in start an interactive job session:
 ```
 sh_dev -c 4 -g 1 -t 02:00:00
 ```
-Set several environment variables that will be used throughout the installation.
+Next, set several environment variables that will be used throughout the installation.
 ```
 export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
