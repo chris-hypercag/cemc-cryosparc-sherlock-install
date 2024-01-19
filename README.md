@@ -44,12 +44,16 @@ Install CryoSPARC Master
 cd $CS_PATH/cryosparc_master
 ./install.sh --license $LICENSE_ID --dbpath $CS_PATH/cryosparc_db --port $PORT_NUM
 ```
-The previous step creates the file `config.sh`. In order to genearlize CryoSPARC for use on the normal partition, open config.sh in your prefered text editor (i.e. vim, nano), and modify the third line 
+When prompted, check the installation settings and press '1' to accept and '2' to exit install. 
+
+When install is complete it creates the file `config.sh`. In order to genearlize CryoSPARC for use on the normal partition, open config.sh in your prefered text editor (i.e. vim, nano), and modify the third line 
 `export CRYOSPARC_MASTER_HOSTNAME="sh##-##n##.int"` by replacing `"sh##-##n##.int"` with `$(hostname)`. The modified line should look like this:
 ```
 export CRYOSPARC_MASTER_HOSTNAME=$(hostname)
-``` 
-Start the CryoSPARC master instance
+```
+Save the changes and exit the text editor to return to the terminal.
+
+Next, start the CryoSPARC master instance
 ```
 ./bin/cryosparcm start
 ```
