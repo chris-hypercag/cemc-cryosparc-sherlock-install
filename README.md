@@ -10,7 +10,7 @@ Before starting the install, you need to obtain a CryoSPARC license. Fill out th
 ### Step 1: Download CryoSPARC
 Start an interactive job session
 ```
-$ sh_dev -c 4 -g 1 -t 02:00:00
+sh_dev -c 4 -g 1 -t 02:00:00
 ```
 Set several environment variables that will be used throughout the installation.
 ```
