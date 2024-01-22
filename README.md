@@ -17,6 +17,7 @@ Next, set several environment variables that will be used throughout the install
 export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
 export PORT_NUM=39000
+
 ```
 Next, set a license environment variable by replacing \<LicenseID\> with the number emailed to you in Step 0. 
 ```
@@ -27,6 +28,7 @@ Create the install and database directories using the $CS_PATH variable defined 
 mkdir -p $CS_PATH
 mkdir -p $CS_PATH/cryosparc_db
 cd $CS_PATH
+
 ```
 Download the compressed files (.tar.gz) for the CryoSPARC master and worker programs
 ```
