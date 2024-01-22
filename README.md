@@ -169,8 +169,7 @@ EOF
 ```
 Last step, connect the master with cluster information and submission script.
 ```
-cd $CS_PATH/cryosparc_master
-./bin/cryosparcm cluster connect
+./cryosparc_master/bin/cryosparcm cluster connect
 ```
 ### Step 4: Clean Up 
 At this point and both the master and worker instances are configured. 
