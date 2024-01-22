@@ -34,11 +34,13 @@ Download the compressed files (.tar.gz) for the CryoSPARC master and worker prog
 ```
 curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
 curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
+
 ```
 Decompress the files
 ```
-tar -xf cryosparc_master.tar.gz cryosparc_master
-tar -xf cryosparc_worker.tar.gz cryosparc_worker
+tar -xvf cryosparc_master.tar.gz cryosparc_master
+tar -xvf cryosparc_worker.tar.gz cryosparc_worker
+
 ```
 ### Step 2 : Install CryoSPARC
 Install CryoSPARC Master
