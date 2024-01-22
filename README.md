@@ -224,7 +224,7 @@ Now try rerunning the port forwarding command. If the previous steps don't reset
 2. Go to Cluster Configuration Tab
 3. Add a few Key-Value pairs, replacing \<SUNetID\> with your SUNetID
 
-- Key = time_requested | Value = 24:00:00
+- Key = time_requested | Value = 01:00:00
 - Key = partition_requested | Value = normal
 - Key = cpu_requested | Value = 1
 - Key = sunetid | Value = \<SUNetID\>
