@@ -83,7 +83,7 @@ cat <<EOF >  cluster_info.json
     "qsub_cmd_tpl" : "sbatch {{ script_path_abs }}",
     "qstat_cmd_tpl" : "squeue -j {{ cluster_job_id }}",
     "qdel_cmd_tpl" : "scancel {{ cluster_job_id }}",
-    "qinfo_cmd_tpl" : "sinfo",
+    "qinfo_cmd_tpl" : "sinfo"
 }
 EOF
 
