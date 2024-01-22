@@ -144,7 +144,7 @@ cat <<EOF >  cs-master.sh
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=$SUNETID@stanford.edu
 
-export \$CS_PATH=$CS_PATH
+export CS_PATH=$CS_PATH
 
 _resubmit() {
     ## Resubmit the job for the next execution
