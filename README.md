@@ -43,7 +43,7 @@ tar -xvf cryosparc_worker.tar.gz cryosparc_worker
 
 ```
 ### Step 2 : Install CryoSPARC
-Install CryoSPARC Master
+Install CryoSPARC Master instance
 ```
 cd $CS_PATH/cryosparc_master
 ./install.sh --license $LICENSE_ID --dbpath $CS_PATH/cryosparc_db --port $PORT_NUM
