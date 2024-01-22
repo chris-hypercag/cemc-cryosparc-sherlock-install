@@ -226,7 +226,6 @@ Now try rerunning the port forwarding command. If the previous steps don't reset
 
 - Key = time_requested | Value = 01:00:00
 - Key = partition_requested | Value = normal
-- Key = cpu_requested | Value = 1
 - Key = sunetid | Value = \<SUNetID\>
 
 ### Submit Jobs
