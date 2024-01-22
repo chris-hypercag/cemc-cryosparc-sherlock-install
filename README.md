@@ -57,7 +57,7 @@ Next, start the CryoSPARC master instance
 ```
 ./bin/cryosparcm start
 ```
-Create your CryoSPARC login credentials. Replace each of the five fields with your own details---keep the quotation marks when entering with your information but remove the brackets, for example `--email "jane@stanford.edu"`.
+Create your CryoSPARC login credentials. Replace each of the five fields with your own details---keep the quotation marks when entering your information but remove the brackets, for example `--email "jane@stanford.edu"`.
 ```
 ./bin/cryosparcm createuser --email "<e-mail>" --password "<password>" --username "<username>" --firstname "<firstname>" --lastname "<lastname>"
 ```
