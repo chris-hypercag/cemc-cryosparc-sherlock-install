@@ -148,17 +148,15 @@ _resubmit() {
     ## Resubmit the job for the next execution
     echo "\$(date): job \$SLURM_JOBID received SIGUSR1 at \$(date), re-submitting"
     date -R >> $CS_PATH/cs-master.log
-    ./cryosparc_master/bin/cryosparcm stop >> $CS_PATH/cs-master.log
+    .$CS_PATH/cryosparc_master/bin/cryosparcm stop >> $CS_PATH/cs-master.log
     sbatch \$0
 }
 trap _resubmit SIGUSR1
 
-cd $CS_PATH
-
 echo "Loading cryosparc GUI"
 
 date -R >> $CS_PATH/cs-master.log
-./cryosparc_master/bin/cryosparcm restart >> $CS_PATH/cs-master.log
+.$CS_PATH/cryosparc_master/bin/cryosparcm restart >> $CS_PATH/cs-master.log
 
 echo "Loaded cryosparc GUI"
 
