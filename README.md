@@ -66,7 +66,7 @@ ml cuda/11.7.1
 cd $CS_PATH
 ```
 ### Step 3: Create Submission Scripts
-Next, prepare to connect the master instance to the worker instance. For this you will need the files `cluster_info.json`, `cluster_script.sh`, and `cs-master.sh`. Copy and paste the following code blocks into the terminal. Clicking the copy icon in the upper right hand corner of the code block will insure the entire field is copied. The `cat` command will automatically concatenate the lines in between it and marker (EOF) and pass it to file named `cluster_info.json`. 
+Next, enable the master instance to run jobs on Sherlock. For this you will need the files `cluster_info.json`, `cluster_script.sh`, and `cs-master.sh`. Copy and paste the following code blocks into the terminal. Clicking the copy icon in the upper right hand corner of the code block will insure the entire field is copied. The `cat` command will automatically concatenate the lines in between it and the end-of-file marker (EOF) and pass it to file named `cluster_info.json`. 
 ```
 cat <<EOF >  cluster_info.json
 {
@@ -170,12 +170,12 @@ done
 EOF
 
 ```
-Last step, connect the master with cluster information and submission script.
+Last step, connect the master with Sherlock cluster information and submission script.
 ```
 ./cryosparc_master/bin/cryosparcm cluster connect
 ```
 ### Step 4: Clean Up 
-At this point and both the master and worker instances are configured. 
+At this point both the master and worker instances are configured. 
 To clean up, stop the cryosparc master instance started earlier in the setup and exit sh_dev mode.
 ```
 ./cryosparc_master/bin/cryosparcm stop
