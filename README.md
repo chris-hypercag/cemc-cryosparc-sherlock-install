@@ -187,7 +187,7 @@ The max runtime for a job on Sherlock 7 days. The `_resubmit()` function in `cs-
 
 It is highly recommended you cancel the master instance each time you are done for the day and resubmit the job when you want to start working again. This helps free up Sherlock resources for other users and keeps your fairshare score from depleting. Your fairshare score is an important metric when running in the normal partition; it effects how long slurm will hold your job before allocating it resources. The higher your fairshare score, the faster your job will get through the queue. You can prevent unnecessary depletion of your fairshare score by requesting the minimum number of resources (cpus, memory, runtime) needed to run the master and worker jobs.
 
-To submit the master job to the queue run the following command from your CryoSPARC directory containing `cs-master.sh`
+To submit the master job to the queue, run the following command from your CryoSPARC directory containing `cs-master.sh`
 ```
 sbatch cs-master.sh
 ```
