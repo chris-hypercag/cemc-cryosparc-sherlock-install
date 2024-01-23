@@ -135,7 +135,6 @@ cat <<EOF >  cs-master.sh
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=1G
-#SBATCH --gpus=0
 #
 #SBATCH --time=7-00:00:00
 #SBATCH --qos=long
@@ -144,26 +143,34 @@ cat <<EOF >  cs-master.sh
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=$SUNETID@stanford.edu
 
-export CS_PATH=$CS_PATH
-
 _resubmit() {
     ## Resubmit the job for the next execution
     echo "\$(date): job \$SLURM_JOBID received SIGUSR1 at \$(date), re-submitting"
-    date -R >> \$CS_PATH/cs-master.log
-    .\$CS_PATH/cryosparc_master/bin/cryosparcm stop >> \$CS_PATH/cs-master.log
+    cd $CS_PATH
+    date -R >> cs-master.log
+    ./cryosparc_master/bin/cryosparcm stop >> cs-master.log
     sbatch \$0
 }
 trap _resubmit SIGUSR1
 
+cd $CS_PATH
+
 echo "Loading cryosparc GUI"
 
-date -R >> \$CS_PATH/cs-master.log
-.\$CS_PATH/cryosparc_master/bin/cryosparcm restart >> \$CS_PATH/cs-master.log
+## run cryosparc server and append output to log file
+echo >> cs-master.log
+date -R >> cs-master.log
+./cryosparc_master/bin/cryosparcm restart >> cs-master.log
 
 echo "Loaded cryosparc GUI"
 
 echo "\$(date): job \$SLURM_JOBID starting on \$SLURM_NODELIST"
 
+## Keep job alive while cryosparc server is up
+while true; do
+    echo "\$(date): normal execution"
+    sleep 300
+done
 EOF
 
 ```
