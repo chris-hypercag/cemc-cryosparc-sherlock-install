@@ -42,7 +42,7 @@ tar -xvf cryosparc_worker.tar.gz cryosparc_worker
 Install CryoSPARC Master instance
 ```
 cd $CS_PATH/cryosparc_master
-./install.sh --license $LICENSE_ID --dbpath $CS_PATH/cryosparc_db --port $PORT_NUM
+./install.sh --license $LICENSE_ID --dbpath $CS_PATH/cryosparc_db --port $PORT_NUM --yes
 ```
 When prompted, check the installation settings and press '1' to accept and '2' to exit install. 
 
@@ -61,7 +61,7 @@ Install CryoSPARC Worker
 ```
 cd $CS_PATH/cryosparc_worker
 ml cuda/11.7.1
-./install.sh --license $LICENSE_ID
+./install.sh --license $LICENSE_ID --yes
 ./bin/cryosparcw connect --worker <hostname> --master <hostname> --port $PORT_NUM --nossd
 cd $CS_PATH
 ```
