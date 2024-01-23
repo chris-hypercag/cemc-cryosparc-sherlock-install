@@ -178,7 +178,7 @@ Last step, connect the master with cluster information and submission script.
 At this point and both the master and worker instances are configured. 
 To clean up, stop the cryosparc master instance started earlier in the setup and exit sh_dev mode.
 ```
-./bin/cryosparcm stop
+./cryosparc_master/bin/cryosparcm stop
 exit
 ```
 
