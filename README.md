@@ -187,19 +187,19 @@ The max runtime for a job on Sherlock 7 days. The `_resubmit()` function in `cs-
 
 It is highly recommended you cancel the master instance each time you are done for the day and resubmit the job when you want to start working again. This helps free up Sherlock resources for other users and keeps your fairshare score from depleting. Your fairshare score is an important metric when running in the normal partition; it effects how long slurm will hold your job before allocating it resources. The higher your fairshare score, the faster your job will get through the queue. You can prevent unnecessary depletion of your fairshare score by requesting the minimum number of resources (cpus, memory, runtime) needed to run the master and worker jobs.
 
-To submit the master job to the queue, run the following command from your CryoSPARC directory containing `cs-master.sh`
+To submit the master job to the queue, run the following command from your CryoSPARC directory containing `cs-master.sh`:
 ```
 sbatch cs-master.sh
 ```
-To cancel the job when you're done
+To cancel the job when you're done:
 ```
 scancel -n cs-master
 ```
-To check if your job has started
+To check the current statust of your job:
 ```
 squeue --me
 ```
-When the master instance is running, `squeue --me` will also output the hostname of the master node under NODELIST. The hostname has the format `sh##-##n##`. Copy this hostname for the next step.
+When the master instance is running, `squeue --me` will show an R under ST and will also output the hostname of the master node under NODELIST. The hostname has the format `sh##-##n##`. Copy the hostname for the next step.
 
 ### Connect to the CryoSPARC GUI
 Now open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the hostname, and \<SUNetID\> with your SUNetID, 
