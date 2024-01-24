@@ -6,11 +6,11 @@ The following instructions were modified from their original form with a generic
 #### Table of Contents
 * [Manual Installation Steps](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#manual-installation-steps)
     * [Step 0: Before Installing](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-0-before-installing)
-    * [Step 1: Download CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1-download-cryoparc)
+    * [Step 1: Download CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1-download-cryosparc)
     * [Step 2: Install CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2-install-cryosparc)
     * [Step 3: Create Submission Scripts](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3-create-submission-scripts)
     * [Step 4: Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4-connect-to-the-cryosparc-gui)
-    * [Step 5: Configure CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-5-configure-cryoparc)
+    * [Step 5: Configure CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-5-configure-cryosparc)
     * [Step 6: Clean Up](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-6-clean-up)
 * [Starting the CryoSPARC GUI after Installation](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#starting-the-cryosparc-gui-after-installation)
     * [Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#connect-to-the-cryosparc-gui)
