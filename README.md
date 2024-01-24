@@ -70,7 +70,7 @@ Next, enable the master instance to run jobs on Sherlock. For this you will need
 ```
 cat <<EOF >  cluster_info.json
 {
-    "name" : "generic-sherlock",
+    "name" : "Sherlock",
     "worker_bin_path" : "$CS_PATH/cryosparc_worker/bin/cryosparcw",
     "cache_path" : "$L_SCRATCH",
     "cache_reserve_mb" : 10000,
