@@ -247,7 +247,7 @@ squeue --me
 When the master instance is running, `squeue --me` will show an R under ST and will also output the hostname of the master node under NODELIST. The hostname has the format `sh##-##n##`. Copy the hostname for the next step.
 
 ### Connect to the CryoSPARC GUI
-Now open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the hostname, and \<SUNetID\> with your SUNetID, 
+Now open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the hostname, \<PORTNum\> with the port number selected in Step 1, and \<SUNetID\> with your SUNetID, 
 ```
 ssh -NfL <PORTNum>:sh##-##n##:39000 <SUNetID>@sherlock.stanford.edu
 ```
