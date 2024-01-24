@@ -249,7 +249,7 @@ When the master instance is running, `squeue --me` will show an R under ST and w
 ### Connect to the CryoSPARC GUI
 Now open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the hostname, and \<SUNetID\> with your SUNetID, 
 ```
-ssh -NfL 39000:sh##-##n##:39000 <SUNetID>@sherlock.stanford.edu
+ssh -NfL <PORTNum>:sh##-##n##:39000 <SUNetID>@sherlock.stanford.edu
 ```
 Then on any browser on your computer, go to the following url, 
 ```
