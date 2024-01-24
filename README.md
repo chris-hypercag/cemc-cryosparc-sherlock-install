@@ -34,8 +34,13 @@ Next, set several environment variables that will be used throughout the install
 ```
 export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
-export PORT_NUM=39000
 ```
+Pick a random number five-digit number ending in 0 between 49160 and 65530, and use it as your \<PORTNum\>.
+```
+export PORT_NUM=<PORTNum>
+```
+The port number tells CryoSPARC where to output the GUI when port forwarding to your browser. Picking a random port number will reduce the likelyhood of two CryoSPARC master instances running on the same node from interfering with one another.
+
 Next, set a license environment variable by replacing \<LicenseID\> with the number emailed to you in Step 0. 
 ```
 export LICENSE_ID=<LicenseID>
@@ -193,9 +198,9 @@ Last step, connect the master with Sherlock cluster information and submission s
 ./cryosparc_master/bin/cryosparcm cluster connect
 ```
 ### Step 4: Connect to the CryoSPARC GUI
-Open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the node name of your interactive session (the node name can be found on the lefthand side of the command line after your SUNetID), and \<SUNetID\> with your SUNetID.
+Open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the node name of your interactive session, \<PORTNum\> with the five-digit number you selected in Step 1, and \<SUNetID\> with your SUNetID. The node name can be found on the lefthand side of the command line after your SUNetID.
 ```
-ssh -NfL 39000:sh##-##n##:39000 <SUNetID>@sherlock.stanford.edu
+ssh -NfL <PORTNum>:sh##-##n##:39000 <SUNetID>@sherlock.stanford.edu
 ```
 Then on any browser on your computer, go to the following url, 
 ```
