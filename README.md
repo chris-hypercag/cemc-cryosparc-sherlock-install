@@ -5,21 +5,21 @@ The following instructions were modified from their original form with a generic
 
 #### Table of Contents
 * [Manual Installation Steps](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#manual-installation-steps)
-    * [Step 0: Before Installing](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-0:-before-installing)
-    * [Step 1: Download CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1:-download-cryoparc)
-    * [Step 2: Install CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2:-install-cryosparc)
-    * [Step 3: Create Submission Scripts](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3:-create-submission-scripts)
-    * [Step 4: Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4:-connect-to-the-cryosparc-gui)
-    * [Step 5: Configure CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-5:-configure-cryoparc)
-    * [Step 6: Clean Up](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-6:-clean-up)
+    * [Step 0: Before Installing](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-0-before-installing)
+    * [Step 1: Download CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1-download-cryoparc)
+    * [Step 2: Install CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2-install-cryosparc)
+    * [Step 3: Create Submission Scripts](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3-create-submission-scripts)
+    * [Step 4: Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4-connect-to-the-cryosparc-gui)
+    * [Step 5: Configure CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-5-configure-cryoparc)
+    * [Step 6: Clean Up](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-6-clean-up)
 * [Starting the CryoSPARC GUI after Installation](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#starting-the-cryosparc-gui-after-installation)
     * [Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#connect-to-the-cryosparc-gui)
     * [Submit Jobs](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#submit-jobs)
 * [Adding Additional Parameters for the Submission Script](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#adding-additional-parameters-for-the-submission-script)
-    * [Step 1: Name the variable for you want to modify](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1:-name-the-variable-for-you-want to-modify)
-    * [Step 2: Edit your submission script](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2:-edit-your-submission-script)
-    * [Step 3: Connect the new job submission script to CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3:-connect-the-new-job-submission-script-to-cryosparc)
-    * [Step 4: Indicate the use of the parameter on the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4:-indicate-the-use of-the-parameter-on-the-cryosparc-gui)
+    * [Step 1: Name the variable for you want to modify](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1-name-the-variable-for-you-wantto-modify)
+    * [Step 2: Edit your submission script](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2-edit-your-submission-script)
+    * [Step 3: Connect the new job submission script to CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3-connect-the-new-job-submission-script-to-cryosparc)
+    * [Step 4: Indicate the use of the parameter on the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4-indicate-the-useof-the-parameter-on-the-cryosparc-gui)
          
 ## Manual Installation Steps
 ### Step 0: Before Installing
