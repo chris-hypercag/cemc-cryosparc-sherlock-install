@@ -158,7 +158,7 @@ echo >> cs-master.log
 date -R >> cs-master.log
 ./cryosparc_master/bin/cryosparcm restart >> cs-master.log
 
-echo "Loaded cryosparc GUI"
+echo "Loaded  cryosparc GUI"
 
 echo "\$(date): job \$SLURM_JOBID starting on \$SLURM_NODELIST"
 
