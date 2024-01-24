@@ -174,15 +174,37 @@ Last step, connect the master with Sherlock cluster information and submission s
 ```
 ./cryosparc_master/bin/cryosparcm cluster connect
 ```
-### Step 4: Clean Up 
-At this point both the master and worker instances are configured. 
-To clean up, stop the cryosparc master instance started earlier in the setup and exit sh_dev mode.
+### Step 4: Connect to the CryoSPARC GUI
+Open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the node name of your interactive session (the node name can be found on the lefthand side of the command line after your SUNetID), and \<SUNetID\> with your SUNetID.
 ```
+ssh -NfL 39000:sh##-##n##:39000 <SUNetID>@sherlock.stanford.edu
+```
+Then on any browser on your computer, go to the following url, 
+```
+localhost:39000
+```
+Once you see the login screen, you can log in with the credentials you chose in Step 2.
+
+### Step 5: Configure CryoSPARC
+Now we will add Key-Value pairs to CryoSPARC's cluster configuration tab. This will allow CryoSPARC to recognize our user-defined parameters in cluster_script.sh. The Key defines the variable name and Value defines the default value.
+1. Once logged in, go to the admin page (key symbol on the left)
+2. Go to Cluster Configuration Tab
+3. Add a few Key-Value pairs, replacing \<SUNetID\> with your SUNetID
+- Key = time_requested | Value = 01:00:00
+- Key = partition_requested | Value = normal
+- Key = sunetid | Value = \<SUNetID\>
+
+### Step 6: Clean Up 
+At this point both the master and worker instances are installed and configured for Sherlock. However, since the master instance is running in a time-limited interactive session, it is not prudent to start a new CryoSPARC project. For that you will need to run the master instance as a Sherlock job. 
+
+To finalize the installation and clean up, go to the terminal window running your interactive session and stop the cryoSPARC master instance and exit sh_dev mode.
+```
+cd $CS_PATH
 ./cryosparc_master/bin/cryosparcm stop
 exit
 ```
 
-## Start the CryoSPARC GUI
+## Starting the CryoSPARC GUI after Installation
 The max runtime for a job on Sherlock 7 days. The `_resubmit()` function in `cs-master.sh` automatically requeues the CryoSPARC master instance when the time limit is reached. If a worker job doesn't finish before the 7 day time limit, the worker job will mostly likely terminate itself.  
 
 It is highly recommended you cancel the master instance each time you are done for the day and resubmit the job when you want to start working again. This helps free up Sherlock resources for other users and keeps your fairshare score from depleting. Your fairshare score is an important metric when running in the normal partition; it effects how long Slurm will hold your job before allocating it resources. The higher your fairshare score, the faster your job will get through the queue. You can prevent unnecessary depletion of your fairshare score by requesting the minimum number of resources (cpus, memory, runtime) needed to run the master and worker jobs.
@@ -195,7 +217,7 @@ To cancel the job when you're done:
 ```
 scancel -n cs-master
 ```
-To check the current statust of your job:
+To check the current status of your job:
 ```
 squeue --me
 ```
@@ -220,22 +242,13 @@ Copy the PID number, and kill the process directly
 ```
 kill -9 <PID>
 ```
-Now try rerunning the port forwarding command. If the previous steps don't reset the port, try closing and reopening your browser.
-
-### Configure CryoSPARC
-1. Once logged in, go to admin (key symbol on the left)
-2. Go to Cluster Configuration Tab
-3. Add a few Key-Value pairs, replacing \<SUNetID\> with your SUNetID
-
-- Key = time_requested | Value = 01:00:00
-- Key = partition_requested | Value = normal
-- Key = sunetid | Value = \<SUNetID\>
+Try rerunning the port forwarding command. If the previous steps did not reset the port, try closing and reopening your browser.
 
 ### Submit Jobs
 For a given job, create and configure your job as needed. When you click "Queue Job" and you're given the option to modify the category "Queue to Lane"
-1. Select "sherlock"
-2. Select the number of gpus, number of cpus (if using gpus, consider getting double the number of cpus as gpus), amount of time you will need and your SUNetID
-3. Click "Queue"
+1. Select "Sherlock"
+2. Under "Cluster submission script variables" enter the estimated time needed to complete the job, the partition the job will run in, and SUNetID if different from the default.
+4. Click "Queue"
 
 ## Adding Additional Parameters for the Submission Script
 You may want to be able to adjust more parameters in the Sherlock job submission script. 
@@ -244,12 +257,12 @@ You may want to be able to adjust more parameters in the Sherlock job submission
 If you want to adjust certain hardcoded sbatch or bash parameters in your submission scripts from within CryoSPARC you can do so by adding Key-Value pairs in the cluster configuation tab. First come up with a unique variable name for the parameter you wish to modify.  For example, the `#SBATCH --partition=` parameter can be modified by declaring a `{{ partition_requested }}` variable name, as seen in `cluster_script.sh`. 
 
 ### Step 2 : Edit your submission script 
-Within your scripts add the new parameter or replace the hardcoded value of a preexisting parameter with your variable name. When using your own variable in scripts, you must keep the curly braces and spaces surrounding the actual variable name. In CryoSPARC, the curly braces and spacing identify `partition_requested` as a variable.
+Within your scripts add the new parameter or replace the hardcoded value of a preexisting parameter with your variable name. When using your own variable in scripts, you must keep the curly braces and spaces surrounding the variable name. In CryoSPARC, the curly braces and spacing identify `partition_requested` as a variable.
 
 ### Step 3 : Connect the new job submission script to CryoSPARC
 Make sure you are in the directory that contains `cluster_script.sh` and `cluster_info.json`. Then enter the following:
 ```
-cryosparcm cluster connect
+./cryosparc_master/bin/cryosparcm cluster connect
 ```
 ### Step 4 : Indicate the use of the parameter on the CryoSPARC GUI
 1. Go to your CryoSPARC master instance on your browser.
