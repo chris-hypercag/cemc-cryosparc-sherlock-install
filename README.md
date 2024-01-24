@@ -3,6 +3,24 @@
 
 The following instructions were modified from their original form with a generic Sherlock user in mind who does not have access to a PI group partition or the owners partition.
 
+#### Table of Contents
+* [Manual Installation Steps](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#manual-installation-steps)
+    * [Step 0: Before Installing](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-0:-before-installing)
+    * [Step 1: Download CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1:-download-cryoparc)
+    * [Step 2: Install CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2:-install-cryosparc)
+    * [Step 3: Create Submission Scripts](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3:-create-submission-scripts)
+    * [Step 4: Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4:-connect-to-the-cryosparc-gui)
+    * [Step 5: Configure CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-5:-configure-cryoparc)
+    * [Step 6: Clean Up](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-6:-clean-up)
+* [Starting the CryoSPARC GUI after Installation](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#starting-the-cryosparc-gui-after-installation)
+    * [Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#connect-to-the-cryosparc-gui)
+    * [Submit Jobs](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#submit-jobs)
+* [Adding Additional Parameters for the Submission Script](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#adding-additional-parameters-for-the-submission-script)
+    * [Step 1: Name the variable for you want to modify](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1:-name-the-variable-for-you-want to-modify)
+    * [Step 2: Edit your submission script](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2:-edit-your-submission-script)
+    * [Step 3: Connect the new job submission script to CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3:-connect-the-new-job-submission-script-to-cryosparc)
+    * [Step 4: Indicate the use of the parameter on the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4:-indicate-the-use of-the-parameter-on-the-cryosparc-gui)
+         
 ## Manual Installation Steps
 ### Step 0: Before Installing
 Before starting the install, you need to obtain a CryoSPARC license. Fill out the download form on CryoSPARC's [website](https://cryosparc.com/download), and select the option that best describes your use case. For most Sherlock users the "I am an academic user carrying out non-profit academic reasearch at a university or educational/research." option will suffice. CryoSPARC will send you an email containing the license number within 24 hours.
@@ -38,7 +56,7 @@ Decompress the files
 tar -xvf cryosparc_master.tar.gz cryosparc_master
 tar -xvf cryosparc_worker.tar.gz cryosparc_worker
 ```
-### Step 2 : Install CryoSPARC
+### Step 2: Install CryoSPARC
 Install CryoSPARC Master instance
 ```
 cd $CS_PATH/cryosparc_master
@@ -253,18 +271,18 @@ For a given job, create and configure your job as needed. When you click "Queue 
 ## Adding Additional Parameters for the Submission Script
 You may want to be able to adjust more parameters in the Sherlock job submission script. 
 
-### Step 1 : Name the variable for you want to modify
+### Step 1: Name the variable for you want to modify
 If you want to adjust certain hardcoded sbatch or bash parameters in your submission scripts from within CryoSPARC you can do so by adding Key-Value pairs in the cluster configuation tab. First come up with a unique variable name for the parameter you wish to modify.  For example, the `#SBATCH --partition=` parameter can be modified by declaring a `{{ partition_requested }}` variable name, as seen in `cluster_script.sh`. 
 
-### Step 2 : Edit your submission script 
+### Step 2: Edit your submission script 
 Within your scripts add the new parameter or replace the hardcoded value of a preexisting parameter with your variable name. When using your own variable in scripts, you must keep the curly braces and spaces surrounding the variable name. In CryoSPARC, the curly braces and spacing identify `partition_requested` as a variable.
 
-### Step 3 : Connect the new job submission script to CryoSPARC
+### Step 3: Connect the new job submission script to CryoSPARC
 Make sure you are in the directory that contains `cluster_script.sh` and `cluster_info.json`. Then enter the following:
 ```
 ./cryosparc_master/bin/cryosparcm cluster connect
 ```
-### Step 4 : Indicate the use of the parameter on the CryoSPARC GUI
+### Step 4: Indicate the use of the parameter on the CryoSPARC GUI
 1. Go to your CryoSPARC master instance on your browser.
 2. Go to admin (key symbol on the left)
 3. Go to Cluster Configuration tab
