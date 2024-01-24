@@ -1,9 +1,9 @@
 # Installing CryoSPARC on Sherlock
 (Attribution: These instructions for installing CryoSPARC on Sherlock are a fork of the instructions developed and published by [jnoh2](https://github.com/jnoh2/cryosparc-install/blob/main/README.md). The instructions were originally derived from [CryoSPARC's](https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure/downloading-and-installing-cryosparc) install instructions and a presentation by Zhiyong Zhang (Stanford Research Computing), with additional credit going to Haoqing Wang for advice and debugging, and to Josh Carter for testing.)
 
-The following instructions were modified from their original form with a generic Sherlock user in mind who does not have access to a PI group partition or the owners partition.
+The following instructions are intended for a general Sherlock user to run the CryoSPARC GUI from the normal partition and to easily queue jobs in any partition they have access to. 
 
-#### Table of Contents
+### Table of Contents
 * [Manual Installation Steps](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#manual-installation-steps)
     * [Step 0: Before Installing](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-0-before-installing)
     * [Step 1: Download CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1-download-cryosparc)
@@ -16,10 +16,10 @@ The following instructions were modified from their original form with a generic
     * [Connect to the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#connect-to-the-cryosparc-gui)
     * [Submit Jobs](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#submit-jobs)
 * [Adding Additional Parameters for the Submission Script](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#adding-additional-parameters-for-the-submission-script)
-    * [Step 1: Name the variable for you want to modify](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1-name-the-variable-for-you-wantto-modify)
+    * [Step 1: Name the variable for you want to modify](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-1-name-the-variable-for-you-want-to-modify)
     * [Step 2: Edit your submission script](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-2-edit-your-submission-script)
     * [Step 3: Connect the new job submission script to CryoSPARC](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-3-connect-the-new-job-submission-script-to-cryosparc)
-    * [Step 4: Indicate the use of the parameter on the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4-indicate-the-useof-the-parameter-on-the-cryosparc-gui)
+    * [Step 4: Indicate the use of the parameter on the CryoSPARC GUI](https://github.com/chris-hypercag/cemc-cryosparc-sherlock-install/blob/main/README.md#step-4-indicate-the-use-of-the-parameter-on-the-cryosparc-gui)
          
 ## Manual Installation Steps
 ### Step 0: Before Installing
@@ -267,6 +267,8 @@ For a given job, create and configure your job as needed. When you click "Queue 
 1. Select "Sherlock"
 2. Under "Cluster submission script variables" enter the estimated time needed to complete the job, the partition the job will run in, and SUNetID if different from the default.
 4. Click "Queue"
+
+Note: The `partition_requested` parameter can be set to any partition on Sherlock. Public partitions include: normal, gpu, and bigmem. Private partitions include the owners partition, and PI paritions. The current Sherlock cluster submission script is general enough to run from any partition you have permission to access.
 
 ## Adding Additional Parameters for the Submission Script
 You may want to be able to adjust more parameters in the Sherlock job submission script. 
