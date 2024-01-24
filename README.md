@@ -268,7 +268,7 @@ For a given job, create and configure your job as needed. When you click "Queue 
 2. Under "Cluster submission script variables" enter the estimated time needed to complete the job, the partition the job will run in, and SUNetID if different from the default.
 4. Click "Queue"
 
-Note: The `partition_requested` parameter can be set to any partition on Sherlock. Public partitions include: normal, gpu, and bigmem. Private partitions include the owners partition, and PI paritions. The current Sherlock cluster submission script is general enough to run from any partition you have permission to access.
+Note: The `partition_requested` parameter can be set to any partition on Sherlock. Public partitions include: normal, gpu, and bigmem. Private partitions include the owners partition, and PI paritions. The current Sherlock cluster submission script is general enough to run from any partition you have permission to access. To see which partitions you have access to, run `sh_part` on Sherlock from the terminal.
 
 ## Adding Additional Parameters for the Submission Script
 You may want to be able to adjust more parameters in the Sherlock job submission script. 
