@@ -35,8 +35,7 @@ Next, set several environment variables that will be used throughout the install
 export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
 ```
-Pick a random number five-digit number ending in 0 between 49160 and 65530, and use it as your \<PORTNum\>.
-   Note: The port number tells CryoSPARC where to output the GUI when port forwarding to your browser. Picking a random port number will reduce the likelyhood of two CryoSPARC master instances running on the same node from interfering with one another.
+Next, pick a random number five-digit number ending in 0 between 49160 and 65530, and use it as your \<PORTNum\>. The port number tells CryoSPARC where to output the GUI when port forwarding to your browser. Note: picking a random port number will reduce the likelyhood of two CryoSPARC master instances using the same port when running on the same node.
 ```
 export PORT_NUM=<PORTNum>
 ```
@@ -84,7 +83,6 @@ Install CryoSPARC Worker
 cd $CS_PATH/cryosparc_worker
 ml cuda/11.7.1
 ./install.sh --license $LICENSE_ID --yes
-./bin/cryosparcw connect --worker <hostname> --master <hostname> --port $PORT_NUM --nossd
 cd $CS_PATH
 ```
 ### Step 3: Create Submission Scripts
