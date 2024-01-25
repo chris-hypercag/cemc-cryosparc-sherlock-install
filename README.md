@@ -36,11 +36,10 @@ export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
 ```
 Pick a random number five-digit number ending in 0 between 49160 and 65530, and use it as your \<PORTNum\>.
+   Note: The port number tells CryoSPARC where to output the GUI when port forwarding to your browser. Picking a random port number will reduce the likelyhood of two CryoSPARC master instances running on the same node from interfering with one another.
 ```
 export PORT_NUM=<PORTNum>
 ```
-The port number tells CryoSPARC where to output the GUI when port forwarding to your browser. Picking a random port number will reduce the likelyhood of two CryoSPARC master instances running on the same node from interfering with one another.
-
 Next, set a license environment variable by replacing \<LicenseID\> with the number emailed to you in Step 0. 
 ```
 export LICENSE_ID=<LicenseID>
