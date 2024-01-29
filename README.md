@@ -34,7 +34,7 @@ Next, set several environment variables that will be used throughout the install
 export SUNETID=$USER
 export CS_PATH=$GROUP_HOME/$USER/cryosparc/4.4.1
 ```
-Next, pick a random number five-digit number ending in 0 between 49160 and 65530, and use it as your \<PORTNum\>. The port number tells CryoSPARC where to output the GUI when port forwarding to your browser. Note: picking a random port number will reduce the likelyhood of two CryoSPARC master instances using the same port when running on the same node.
+Next, pick a random number five-digit number ending in 0 between 49160 and 65530, and use it as your \<PORTNum\>. The port number tells CryoSPARC where to output the GUI when ssh tunneling to your browser. Note: picking a random port number will reduce the likelyhood of two CryoSPARC master instances using the same port when running on the same node.
 ```
 export PORT_NUM=<PORTNum>
 ```
