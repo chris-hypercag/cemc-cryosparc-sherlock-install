@@ -196,7 +196,7 @@ Last step, connect the master with Sherlock cluster information and submission s
 ### Step 4: Connect to the CryoSPARC GUI
 Open a separate terminal on your computer. In the new terminal execute the following command to enable port forwarding, replacing sh##-##n## with the node name of your interactive session, \<PORTNum\> with the five-digit number you selected in Step 1, and \<SUNetID\> with your SUNetID. The node name can be found on the lefthand side of the command line after your SUNetID.
 ```
-ssh -NfL <PORTNum>:sh##-##n##:39000 <SUNetID>@sherlock.stanford.edu
+ssh -NfL 39000:sh##-##n##:<PORTNum> <SUNetID>@sherlock.stanford.edu
 ```
 Then on any browser on your computer, go to the following url, 
 ```
