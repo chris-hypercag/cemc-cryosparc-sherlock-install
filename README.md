@@ -114,7 +114,7 @@ cat <<EOF >  cluster_script.sh
 #SBATCH --nodes=1
 #SBATCH --ntasks={{ num_cpu }}
 #SBATCH --gpus={{ num_gpu }}
-#SBATCH --mem={{ (ram_gb*1)|int }}G
+#SBATCH --mem={{ (ram_gb*2)|int }}G
 #
 #SBATCH --time={{ time_requested }}
 #
