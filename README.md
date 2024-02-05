@@ -147,7 +147,7 @@ cat <<EOF >  cs-master.sh
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem-per-cpu=1G
+#SBATCH --mem=32G
 #
 #SBATCH --time=7-00:00:00
 #SBATCH --qos=long
