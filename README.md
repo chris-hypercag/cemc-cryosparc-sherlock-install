@@ -250,17 +250,28 @@ Then on any browser on your computer, go to the following url,
 localhost:<PORTNum>
 ```
 Once you see the login screen, you can log in with the credentials you chose in Step 2.
-
-Note: If the browser is unable to connect, the port may need to be reset. First find the PID number of the open port.
+### GUI Not Connecting
+Note: If the browser is unable to connect, the port may need to be reset. 
+#### Mac and Linux users
+From a terminal on your desktop, find the PID number of the open port.
 ```
 lsof -i:<PORTNum>
 ```
 Copy the PID number, and kill the process directly
 ```
-kill -9 <PID>
+kill <PID>
 ```
-Try rerunning the port forwarding command. If the previous steps did not reset the port, try closing and reopening your browser.
-
+Try rerunning the port forwarding command. If the port did not reset, try closing the browser completely and reopening.
+#### Windows users
+From a Windows PowerShell on your desktop, find the PID number of the open port.
+```
+netstat -ano | findstr :<PORTNum>
+```
+Copy the PID number in the far right column and kill the process directly
+```
+kill <PID>
+```
+If the `kill` command returns an error, open your Task Manager, search for a process name ssh, right click and select 'End task.' Now try rerunning the port forwarding command.
 ### Submit Jobs
 For a given job, create and configure your job as needed. When you click "Queue Job" and you're given the option to modify the category "Queue to Lane"
 1. Select "Sherlock"
