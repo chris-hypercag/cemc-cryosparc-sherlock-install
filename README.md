@@ -147,7 +147,7 @@ cat <<EOF >  cs-master.sh
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=32G
+#SBATCH --mem=16G
 #
 #SBATCH --time=7-00:00:00
 #SBATCH --qos=long
@@ -273,17 +273,17 @@ kill <PID>
 ```
 If the `kill` command returns an error, open your Task Manager, search for a process name ssh, right click and select 'End task.' Now try rerunning the port forwarding command.
 ### Submit Jobs
-For a given job, create and configure your job as needed. When you click "Queue Job" and you're given the option to modify the category "Queue to Lane"
+For a given job, build your job as needed. When you click "Queue Job," and you're given the option to modify the category "Queue to Lane"
 1. Select "Sherlock"
 2. Under "Cluster submission script variables" enter the estimated time needed to complete the job, the partition the job will run in, and SUNetID if different from the default.
 4. Click "Queue"
 
-Note: The `partition_requested` parameter can be set to any partition on Sherlock. Public partitions include: normal, gpu, and bigmem. Private partitions include the owners partition, and PI paritions. The current Sherlock cluster submission script is general enough to run from any partition you have permission to access. To see which partitions you have access to, run `sh_part` on Sherlock from the terminal.
+Note: The `partition_requested` parameter can be set to any partition on Sherlock. Public partitions include: `normal`, `gpu`, and `bigmem`. Private partitions include the `owners` partition, and PI partions. The current Sherlock cluster submission script is general enough to run from any partition you have permission to access. To see which partitions you have access to, run `sh_part` on Sherlock from the terminal.
 
 ## Adding Additional Parameters for the Submission Script
 You may want to be able to adjust more parameters in the Sherlock job submission script. 
 
-### Step 1: Name the variable for you want to modify
+### Step 1: Name the variable you want to modify
 If you want to adjust certain hardcoded sbatch or bash parameters in your submission scripts from within CryoSPARC you can do so by adding Key-Value pairs in the cluster configuation tab. First come up with a unique variable name for the parameter you wish to modify.  For example, the `#SBATCH --partition=` parameter can be modified by declaring a `{{ partition_requested }}` variable name, as seen in `cluster_script.sh`. 
 
 ### Step 2: Edit your submission script 
