@@ -64,8 +64,7 @@ Install CryoSPARC Master instance
 cd $CS_PATH/cryosparc_master
 ./install.sh --license $LICENSE_ID --dbpath $CS_PATH/cryosparc_db --port $PORT_NUM --yes
 ```
-When install is complete, the file `config.sh` is created. In order to genearlize CryoSPARC for use on the normal partition, open `config.sh` in your prefered text editor (i.e. vim, nano), and modify the third line `export CRYOSPARC_MASTER_HOSTNAME="sh##-##n##.int"` by replacing `"sh##-##n##.int"` with `$(hostname)`. The modified line should look like this:
-`export CRYOSPARC_MASTER_HOSTNAME=$(hostname)`. Save the changes and exit the text editor to return to the terminal.
+When install is complete, the file `config.sh` is created. In order to genearlize CryoSPARC for use on Sherlock, open `config.sh` in your prefered text editor (i.e. vim, nano), and modify and comment out the third line `export CRYOSPARC_MASTER_HOSTNAME="sh##-##n##.int"` to look like this: `#export CRYOSPARC_MASTER_HOSTNAME=$(hostname)`. Now, below this line add the following line `export CRYOSPARC_FORCE_HOSTNAME=true`. Save the changes and exit the text editor to return to the terminal.
 
 Next, start the CryoSPARC master instance
 ```
