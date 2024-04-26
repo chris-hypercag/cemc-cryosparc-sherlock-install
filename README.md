@@ -272,7 +272,7 @@ Copy the PID number in the far right column and kill the process directly
 ```
 kill <PID>
 ```
-If the `kill` command returns an error, open your Task Manager, search for a process name ssh, right click and select 'End task.' Now try rerunning the port forwarding command.
+If the `kill` command returns an error, open your Task Manager, search for a process named ssh, right click and select 'End task.' Now try rerunning the port forwarding command.
 ### Submit Jobs
 For a given job, build your job as needed. When you click "Queue Job," and you're given the option to modify the category "Queue to Lane"
 1. Select "Sherlock"
