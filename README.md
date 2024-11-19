@@ -172,6 +172,8 @@ _safestop() {
     cd $CS_PATH
     date -R >> cs-master.log
     ./cryosparc_master/bin/cryosparcm stop >> cs-master.log
+    ## Uncomment the line below to automatically resubmit master instance after expiration.
+    ## Do not leave the master instance running if you are not actively running CryoSPARC jobs. 
     #sbatch \$0
 }
 trap _safestop SIGUSR1
@@ -233,7 +235,7 @@ exit
 ```
 
 ## Starting the CryoSPARC GUI after Installation
-The max runtime for a job on Sherlock 7 days. The `_resubmit()` function in `cs-master.sh` automatically requeues the CryoSPARC master instance when the time limit is reached. If a worker job doesn't finish before the 7 day time limit, the worker job will mostly likely terminate itself.  
+The max runtime for a job on Sherlock 7 days. The `_safestop()` function in `cs-master.sh` safely stops the CryoSPARC master instance when the time limit is reached. If a worker job doesn't finish before the 7 day time limit, the worker job will terminate itself and issue a failed status.  
 
 It is highly recommended you cancel the master instance each time you are done for the day and resubmit the job when you want to start working again. This helps free up Sherlock resources for other users and keeps your fairshare score from depleting. Your fairshare score is an important metric when running in the normal partition; it effects how long Slurm will hold your job before allocating it resources. The higher your fairshare score, the faster your job will get through the queue. You can prevent unnecessary depletion of your fairshare score by requesting the minimum number of resources (cpus, memory, runtime) needed to run the master and worker jobs.
 
