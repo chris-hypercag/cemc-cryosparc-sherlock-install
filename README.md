@@ -172,7 +172,7 @@ _resubmit() {
     cd $CS_PATH
     date -R >> cs-master.log
     ./cryosparc_master/bin/cryosparcm stop >> cs-master.log
-    sbatch \$0
+    #sbatch \$0
 }
 trap _resubmit SIGUSR1
 
