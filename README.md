@@ -166,15 +166,15 @@ cat <<EOF >  cs-master.sh
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=$SUNETID@stanford.edu
 
-_resubmit() {
-    ## Resubmit the job for the next execution
+_safestop() {
+    ## Safely stop the server for the next execution
     echo "\$(date): job \$SLURM_JOBID received SIGUSR1 at \$(date), re-submitting"
     cd $CS_PATH
     date -R >> cs-master.log
     ./cryosparc_master/bin/cryosparcm stop >> cs-master.log
     #sbatch \$0
 }
-trap _resubmit SIGUSR1
+trap _safestop SIGUSR1
 
 cd $CS_PATH
 
