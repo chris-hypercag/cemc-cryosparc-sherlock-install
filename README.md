@@ -61,8 +61,8 @@ cd $CS_PATH
 ```
 Download the compressed files (.tar.gz) for the CryoSPARC master and worker programs
 ```
-curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
-curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
+curl -L https://get.cryosparc.com/download/master-v4.7.1/$LICENSE_ID -o cryosparc_master.tar.gz
+curl -L https://get.cryosparc.com/download/worker-v4.7.1/$LICENSE_ID -o cryosparc_worker.tar.gz
 ```
 Decompress the files
 ```
